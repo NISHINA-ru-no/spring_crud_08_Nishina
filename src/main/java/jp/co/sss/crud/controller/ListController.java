@@ -1,0 +1,15 @@
+package jp.co.sss.crud.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import jp.co.sss.crud.repository.EmployeeRepository;
+
+@Controller
+public class ListController {
+	@Autowired
+	EmployeeRepository repository;
+	
+	@RequestMapping()
+
+}
