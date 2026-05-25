@@ -41,7 +41,7 @@ public class Employee {
 	private Integer authority;
 	
 	@ManyToOne
-	@JoinColumn(name = "emp_id",referencedColumnName = "dept_id")
+	@JoinColumn(name = "dept_id",referencedColumnName = "deptId")
 	private Department department;
 	
 	 public Department getDepartment() {

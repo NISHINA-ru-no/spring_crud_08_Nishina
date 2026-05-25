@@ -10,7 +10,10 @@ import jakarta.persistence.Table;
 public class Department {
 	@Id
 	private Integer deptId;
-
+	
+	@Column
+	private String deptName;
+	
 	public Integer getDeptId() {
 		return deptId;
 	}
@@ -26,8 +29,6 @@ public class Department {
 	public void setDeptName(String deptName) {
 		this.deptName = deptName;
 	}
-
-	@Column
-	private String deptName;
-
 }
+
+		

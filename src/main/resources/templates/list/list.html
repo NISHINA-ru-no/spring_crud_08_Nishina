@@ -35,6 +35,7 @@
 			<th class="empId">社員ID</th>
 			<th class="empName">社員名</th>
 			<th class="gender">性別</th>
+			
 			<th class="address">住所</th>
 			<th class="birthday">生年月日</th>
 			<th class="authority">権限</th>
@@ -45,15 +46,22 @@
 		<tr th:each="emp: ${emps}">
 			<td th:text="${emp.empId}"></td>
 		    <td th:text="${emp.empName}"></td>
-		    <td th:text="${emp.gender}"></td>
+		    <td th:if="${emp.gender == 1}" th:text="男性"></td>
+		    <td th:if="${emp.gender == 2}" th:text="女性"></td>
 		    <td th:text="${emp.address}"></td>
-            <td th:text="${emp.birthday}"></td>
-            <td th:text="${emp.authority}"></td>
-            <td th:text="${emp.deptName}"></td>
+            <td th:text="${#dates.format(emp.birthday, 'yyyy/MM/dd')}"></td>
+            <td th:if="${emp.authority == 1}" th:text="一般"></td>
+             <td th:if="${emp.authority == 2}" th:text="管理者"></td>
+            <td th:text="${emp.department.deptName}"></td>
 		</tr>
+		
+		
 
 		<!-- ***####を書き換え、社員情報を全件出力する ここまで*** -->
 	</table>
+	
+    
+    
 	<!-- ***検索結果がある場合 ここまで*** -->
 
 </body>
