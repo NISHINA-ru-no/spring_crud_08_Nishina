@@ -17,5 +17,11 @@ public class ListController {
 		model.addAttribute("emps", repository.findAll());
 		return "/list/list";
 	}
+	
+	@RequestMapping("/list/empName")
+	public String showListByEmpName(String empName, Model model) {
+		model.addAttribute("emps",repository.findByEmpNameContaining(empName));
+		return "/list/list";
+	}
 
 }
