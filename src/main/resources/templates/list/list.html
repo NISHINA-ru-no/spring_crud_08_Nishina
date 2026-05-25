@@ -20,7 +20,7 @@
 	<th:block th:if="false">
 		<div class="message">
 			<!--以下に該当する社員が存在しないときのメッセージを記述する -->
-			<p class="back_to_top_message"></p>
+			<p class="back_to_top_message">該当する社員は存在しません。</p>
 			<!--以下に一覧表示に戻るリンクを記述する -->
 			<p class="back_to_top_link"></p>
 		</div>
@@ -42,18 +42,16 @@
 		</tr>
 
 		<!-- ***####を書き換え、社員情報を全件出力する*** -->
-		<tr th:each="employee:####">
-
-
-
-
-
-
-
-
-
-
+		<tr th:each="emp: ${emps}">
+			<td th:text="${emp.empId}"></td>
+		    <td th:text="${emp.empName}"></td>
+		    <td th:text="${emp.gender}"></td>
+		    <td th:text="${emp.address}"></td>
+            <td th:text="${emp.birthday}"></td>
+            <td th:text="${emp.authority}"></td>
+            <td th:text="${emp.deptName}"></td>
 		</tr>
+
 		<!-- ***####を書き換え、社員情報を全件出力する ここまで*** -->
 	</table>
 	<!-- ***検索結果がある場合 ここまで*** -->
