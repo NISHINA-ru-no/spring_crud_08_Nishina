@@ -17,9 +17,8 @@ import jakarta.persistence.Table;
 public class Employee {
 	@Id
 	//ここに入れた
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator =
-	"seq_emp_gen")
-	@SequenceGenerator(name = "seq_emp_gen", sequenceName = "seq_name",allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator ="seq_emp_gen")
+	@SequenceGenerator(name = "seq_emp_gen", sequenceName = "seq_emp",allocationSize = 1)
 	private Integer empId;
 
 	@Column

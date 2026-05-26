@@ -23,7 +23,10 @@
 			存在しないときのメッセージを記述する -->
 			<p class="back_to_top_message">該当する社員は存在しません。</p>
 			<!--以下に一覧表示に戻るリンクを記述する -->
-			<p class="back_to_top_link"></p>
+			
+			<a th:href="@{/list}"><p class="back_to_top_link">一覧表示に戻る</p></a>
+
+			
 		</div>
 	</th:block>
 	<!-- ***検索結果が０件の場合 ここまで*** -->
