@@ -17,9 +17,10 @@
 
 	<!-- ***検索結果が０件の場合*** -->
 	<!-- ***falseを書き換え、表示内容を記述すること*** -->
-	<th:block th:if="false">
+	<th:block th:if="${#lists.isEmpty(emps)}">
 		<div class="message">
-			<!--以下に該当する社員が存在しないときのメッセージを記述する -->
+			<!--以下に該当する社員が
+			存在しないときのメッセージを記述する -->
 			<p class="back_to_top_message">該当する社員は存在しません。</p>
 			<!--以下に一覧表示に戻るリンクを記述する -->
 			<p class="back_to_top_link"></p>
@@ -30,7 +31,7 @@
 	<!-- ***検索結果がある場合*** -->
 	<!-- Employeeテーブルからclass名を指定すること。 -->
 	<!-- ***trueを書き換えること*** -->
-	<table class="list_table" th:if="true">
+	<table class="list_table" th:unless="${#lists.isEmpty(emps)}">
 		<tr>
 			<th class="empId">社員ID</th>
 			<th class="empName">社員名</th>
